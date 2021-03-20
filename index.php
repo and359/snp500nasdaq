@@ -84,7 +84,7 @@
 	<div class="navbar-fixed">
 	<nav>
 		<div class="nav-wrapper">
-			<a href="#" class="brand-logo center">Trading Results: 1</a>
+			<a href="#" class="brand-logo center">Trading Results: </a>
 			<a href="" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>		
 		</div>
 	</nav>
@@ -156,9 +156,9 @@
 								  }
 								 //});
 								setInterval(function(){//setInterval() method execute on every interval until called clearInterval()
-								  //$('#load_tweets').load("fetch.php").fadeIn("slow");
-									$('#demo1').load("fetch.php").fadeIn("slow");
-								  //load() method fetch data from fetch.php page
+								  
+									$('#myChart').load("fetch.php").fadeIn("slow");
+								  
 								 	}, 1000);
 								});
                   					}
@@ -246,8 +246,15 @@
 	$data5 = '';
 	$data6 = '';
 	
+	
+	$connect = mysqli_connect($host,$user,$pass,$db);
+	$query = "SELECT * FROM tbl_tweet ORDER BY tweet_id DESC";
+	$result = mysqli_query($connect, $query);
+	$row = mysqli_fetch_array($result)
+	$ticker = $row["Ticker"];
+	
 	//query to get data from the table
-	$sql = "SELECT * FROM `backtest`;";
+	$sql = "SELECT * FROM `backtest` WHERE Ticker = '".$ticker."';";
     	$result = mysqli_query($mysqli, $sql);
 
 	//loop through the returned data
