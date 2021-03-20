@@ -84,7 +84,7 @@
 	<div class="navbar-fixed">
 	<nav>
 		<div class="nav-wrapper">
-			<a href="#" class="brand-logo center">Trading Results: </a>
+			<a href="#" class="brand-logo center">Trading Results: 1</a>
 			<a href="" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>		
 		</div>
 	</nav>
@@ -155,6 +155,11 @@
 								   });
 								  }
 								 //});
+								setInterval(function(){//setInterval() method execute on every interval until called clearInterval()
+								  //$('#load_tweets').load("fetch.php").fadeIn("slow");
+									$('#demo1').load("fetch.php").fadeIn("slow");
+								  //load() method fetch data from fetch.php page
+								 	}, 1000);
 								});
                   					}
 							
