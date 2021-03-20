@@ -84,7 +84,7 @@
 	<div class="navbar-fixed">
 	<nav>
 		<div class="nav-wrapper">
-			<a href="#" class="brand-logo center">Trading Results: </a>
+			<a href="#" class="brand-logo center">Trading Results: 1</a>
 			<a href="" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>		
 		</div>
 	</nav>
@@ -137,7 +137,7 @@
                                       				}
                                       			document.getElementById("order").value = "You Picked: " + txt;
 							$(document).ready(function(){
-								 $('#tweet_button').click(function(){
+								 //$('#tweet_button').click(function(){
 								  //var tweet_txt = $('#tweet').val();
 								  var tweet_txt = "IVW";
 								  //trim() is used to remover spaces
@@ -150,11 +150,11 @@
 								    dataType:"text",
 								    success:function(data)
 								    {
-								     $('#tweet').val("");
+								     //$('#tweet').val("");
 								    }
 								   });
 								  }
-								 });
+								 //});
 								});
                   					}
 							
