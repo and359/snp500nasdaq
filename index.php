@@ -157,7 +157,7 @@
 								 //});
 								setInterval(function(){//setInterval() method execute on every interval until called clearInterval()
 								  
-									$('#myChart').load("fetch.php").fadeIn("slow");
+									//$('#myChart').load("fetch.php").fadeIn("slow");
 								  
 								 	}, 1000);
 								});
