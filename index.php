@@ -232,11 +232,11 @@
 	<!--get data from mysql-->
 	<?php
 	
-	$connect = mysqli_connect("heroku_a7bcbc3dd84756e","b11d6e54534643","318fd8ce","us-cdbr-east-03.cleardb.com");
+	/*$connect = mysqli_connect("heroku_a7bcbc3dd84756e","b11d6e54534643","318fd8ce","us-cdbr-east-03.cleardb.com");
 	$query = "SELECT * FROM heroku_a7bcbc3dd84756e.single_stock_selected";
 	$result = mysqli_query($connect, $query);
 	$row = mysqli_fetch_array($result)
-	$ticker = $row["Ticker"];
+	$ticker = $row["Ticker"];*/
 	
 	/* Database connection settings */
 	$host = 'us-cdbr-east-03.cleardb.com';
@@ -254,7 +254,8 @@
 	$data6 = '';
 	
 	//query to get data from the table
-	$sql = "SELECT * FROM `backtest` WHERE Ticker = '".$ticker."';";
+	//$sql = "SELECT * FROM `backtest` WHERE Ticker = '".$ticker."';";
+	$sql = "SELECT * FROM `backtest`;";
     	$result = mysqli_query($mysqli, $sql);
 
 	//loop through the returned data
