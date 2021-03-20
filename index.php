@@ -84,7 +84,7 @@
 	<div class="navbar-fixed">
 	<nav>
 		<div class="nav-wrapper">
-			<a href="#" class="brand-logo center">Trading Results: </a>
+			<a href="#" class="brand-logo center">Trading Results: 1</a>
 			<a href="" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>		
 		</div>
 	</nav>
@@ -232,11 +232,11 @@
 	<!--get data from mysql-->
 	<?php
 	
-	/*$connect = mysqli_connect("heroku_a7bcbc3dd84756e","b11d6e54534643","318fd8ce","us-cdbr-east-03.cleardb.com");
+	$connect = mysqli_connect("heroku_a7bcbc3dd84756e","b11d6e54534643","318fd8ce","us-cdbr-east-03.cleardb.com");
 	$query = "SELECT * FROM heroku_a7bcbc3dd84756e.single_stock_selected";
 	$result = mysqli_query($connect, $query);
 	$row = mysqli_fetch_array($result)
-	$ticker = $row["Ticker"];*/
+	$ticker = $row["Ticker"];
 	
 	/* Database connection settings */
 	$host = 'us-cdbr-east-03.cleardb.com';
