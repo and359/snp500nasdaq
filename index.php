@@ -146,7 +146,7 @@
 	<div class="navbar-fixed">
 	<nav>
 		<div class="nav-wrapper">
-			<a href="#" class="brand-logo center">Trading Results: </a>
+			<a href="#" class="brand-logo center">Trading Results: 1</a>
 			<a href="" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>		
 		</div>
 	</nav>
@@ -241,13 +241,7 @@
 											    //$('.result').html(data);
 											  }
 											});
-								$(document).ready(function(){								 
-								setInterval(function(){//setInterval() method execute on every interval until called clearInterval()
-								  
-									//$('#myChart').load("fetch.php").fadeIn("slow");
-								  	$('#myChart').load(testing_date).fadeIn("slow");
-								 	}, 1000);
-								});
+								document.getElementById("order").value = testing_date;
 								//alert(testing_date);
 								//alert(tweet_txt1);
 								//use another ajax
