@@ -6,7 +6,7 @@
 								$pass = '1a8113a0';
 								$db = 'heroku_69459908ed082cc';
 								$mysqli = new mysqli($host,$user,$pass,$db) or die($mysqli->error);
-								$tweet = mysqli_real_escape_string($mysqli, $_POST["tweet1"]);
+								$tweet1 = mysqli_real_escape_string($mysqli, $_POST["tweet1"]);
 									
 								$date2 = '';
 								$data9 = '';
