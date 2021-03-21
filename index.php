@@ -146,7 +146,7 @@
 	<div class="navbar-fixed">
 	<nav>
 		<div class="nav-wrapper">
-			<a href="#" class="brand-logo center">Trading Results: </a>
+			<a href="#" class="brand-logo center">Trading Results: 1</a>
 			<a href="" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>		
 		</div>
 	</nav>
@@ -235,10 +235,10 @@
 								
 								$.ajax({
 												type: 'get',
-											  url: 'fetch_ticker.php',
+											  url: 'fetch_date1.php',
 											async: false,
 											method:"POST",
-											data:{tweet1:tweet_txt1},
+											data:{tweet3:tweet_txt3},
 											  //dataType:"json",
 											  success: function(data) {
 												  //testing_px = JSON.parse(data);
@@ -251,10 +251,10 @@
 											   
 								$.ajax({
 												type: 'get',
-											  url: 'fetch_date.php',
+											  url: 'fetch_ticker.php',
 											async: false,
 											method:"POST",
-											data:{tweet3:tweet_txt3},
+											data:{tweet1:tweet_txt1},
 											  //dataType:"json",
 											  success: function(data) {
 												  //testing_px = JSON.parse(data);
