@@ -146,7 +146,7 @@
 	<div class="navbar-fixed">
 	<nav>
 		<div class="nav-wrapper">
-			<a href="#" class="brand-logo center">Trading Results: 1</a>
+			<a href="#" class="brand-logo center">Trading Results: </a>
 			<a href="" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>		
 		</div>
 	</nav>
@@ -234,7 +234,7 @@
 											async: false,
 											method:"POST",
 											data:{tweet1:tweet_txt1},
-											  dataType:"text",
+											  //dataType:"text",
 											  success: function(data) {
 												  testing_date = data;
 												  
