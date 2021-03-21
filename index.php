@@ -146,7 +146,7 @@
 	<div class="navbar-fixed">
 	<nav>
 		<div class="nav-wrapper">
-			<a href="#" class="brand-logo center">Trading Results: 1</a>
+			<a href="#" class="brand-logo center">Trading Results: </a>
 			<a href="" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>		
 		</div>
 	</nav>
@@ -232,7 +232,8 @@
 								var tweet_txt2 = txt;
 								var testing_date; 
 								var testing_px; 
-								$.ajax({
+								
+								$(document).ready(function(){$.ajax({
 												type: 'get',
 											  url: 'fetch_ticker.php',
 											async: false,
@@ -247,7 +248,8 @@
 											    //$('.result').html(data);
 											  }
 											});
-								$.ajax({
+											    });
+								$(document).ready(function(){$.ajax({
 												type: 'get',
 											  url: 'fetch_date.php',
 											async: false,
@@ -261,12 +263,13 @@
 											    //$('.result').html(data);
 											  }
 											});
+											    });
 								document.getElementById("order").value = testing_px;
 								//alert(testing_px + testing_date);
 								//alert(tweet_txt1);
 								//use another ajax
 								//var testing_date1 = [testing_date];
-								$.ajax({
+								$(document).ready(function(){$.ajax({
 								    url:"insert1.php",
 								    method:"POST",
 								    //data:{tweet5:testing_px},
@@ -277,6 +280,7 @@
 								     	txt = txt;
 								    }
 								   });
+											    });
 
 								
 								var myChart3=new Chart(chr, {
