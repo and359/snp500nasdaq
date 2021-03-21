@@ -146,7 +146,7 @@
 	<div class="navbar-fixed">
 	<nav>
 		<div class="nav-wrapper">
-			<a href="#" class="brand-logo center">Trading Results: 1</a>
+			<a href="#" class="brand-logo center">Trading Results: </a>
 			<a href="" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>		
 		</div>
 	</nav>
@@ -227,7 +227,9 @@
 								myChart.destroy();
 								//var chr3=document.getElementById("myChart").getContext("2d");
 								var tweet_txt1 = txt;
+								var tweet_txt2 = txt;
 								var testing_date; 
+								var testing_px; 
 								$.ajax({
 												type: 'get',
 											  url: 'fetch_ticker.php',
@@ -236,12 +238,25 @@
 											data:{tweet1:tweet_txt1},
 											  //dataType:"json",
 											  success: function(data) {
+												  testing_px = JSON.parse(data);
+												  
+											    //$('.result').html(data);
+											  }
+											});
+								$.ajax({
+												type: 'get',
+											  url: 'fetch_date.php',
+											async: false,
+											method:"POST",
+											data:{tweet2:tweet_txt2},
+											  //dataType:"json",
+											  success: function(data) {
 												  testing_date = JSON.parse(data);
 												  
 											    //$('.result').html(data);
 											  }
 											});
-								document.getElementById("order").value = testing_date;
+								//document.getElementById("order").value = testing_date;
 								//alert(testing_date);
 								//alert(tweet_txt1);
 								//use another ajax
@@ -258,7 +273,8 @@
 								      datasets: [{
 									 label: 'Close Price',
 									 //data: [100,200,300],
-									 data: [<?php echo $data1; ?>],
+									 //data: [<?php echo $data1; ?>],
+									 data: testing_px,
 									 backgroundColor: 'rgba(0, 119, 290, 0.2)',
 									 borderColor: 'rgba(0, 119, 290, 0.6)'
 								      }]
