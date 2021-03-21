@@ -146,7 +146,7 @@
 	<div class="navbar-fixed">
 	<nav>
 		<div class="nav-wrapper">
-			<a href="#" class="brand-logo center">Trading Results: 1</a>
+			<a href="#" class="brand-logo center">Trading Results: </a>
 			<a href="" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>		
 		</div>
 	</nav>
@@ -227,41 +227,18 @@
 								myChart.destroy();
 								//var chr3=document.getElementById("myChart").getContext("2d");
 								
-								/*<?php								
-								$host = 'us-cdbr-east-03.cleardb.com';
-								$user = 'b8a00bf633cf68';
-								$pass = '1a8113a0';
-								$db = 'heroku_69459908ed082cc';
-								$mysqli = new mysqli($host,$user,$pass,$db) or die($mysqli->error);
+
 								
-								$date2 = '';
-								$data9 = '';
-
-								//query to get data from the table
-								$sql = "SELECT * FROM `backtest` WHERE Ticker = '".tweet_txt."';";								
-								$result = mysqli_query($mysqli, $sql);
-
-								//loop through the returned data
-								while ($row = mysqli_fetch_array($result)) {
-
-									$data9 = $data9 . '"'. $row['Price'].'",';
-									$date2 = $date2 . '"'. $row['PriceDate'] .'",';		
-								}
-
-								$date2 = trim($date2,",");
-								$data9 = trim($data9,",");
-								?>
-								*/
 								var myChart3=new Chart(chr, {
 								//var chart = new Chart(ctx, {
 								   type: 'line',
 								   data: {
-									labels: [<?php echo $date2; ?>],
+									labels: [<?php echo $date; ?>],
 									   //labels: ["17/03/2020","13/04/2020","01/05/2020"],
 								      datasets: [{
 									 label: 'Close Price',
 									 //data: [100,200,300],
-									 data: [<?php echo $data9; ?>],
+									 data: [<?php echo $data1; ?>],
 									 backgroundColor: 'rgba(0, 119, 290, 0.2)',
 									 borderColor: 'rgba(0, 119, 290, 0.6)'
 								      }]
