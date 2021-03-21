@@ -84,7 +84,7 @@
 	<div class="navbar-fixed">
 	<nav>
 		<div class="nav-wrapper">
-			<a href="#" class="brand-logo center">Trading Results: 1</a>
+			<a href="#" class="brand-logo center">Trading Results: </a>
 			<a href="" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>		
 		</div>
 	</nav>
@@ -162,9 +162,9 @@
 								 	}, 1000);
 								});
 								
-								myChart.destroy();
-								myChart = new Chart(chr, {
-								//var chart = new Chart(ctx, {
+								//myChart.destroy();
+								var chr3=document.getElementById("myChart").getContext("2d");
+								myChart = new Chart(chr3, {								
 								   type: 'line',
 								   data: {
 									labels: [<?php echo $date2; ?>],
@@ -186,7 +186,7 @@
 								      annotation: {
 									 //drawTime: 'afterDatasetsDraw',
 									 drawTime: 'afterDraw',
-									 annotations: test5
+									 annotations: //test5
 								      }
 								   }
 								});
