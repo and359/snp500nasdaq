@@ -146,7 +146,7 @@
 	<div class="navbar-fixed">
 	<nav>
 		<div class="nav-wrapper">
-			<a href="#" class="brand-logo center">Trading Results: 1</a>
+			<a href="#" class="brand-logo center">Trading Results: </a>
 			<a href="" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>		
 		</div>
 	</nav>
@@ -261,13 +261,12 @@
 											    //$('.result').html(data);
 											  }
 											});
-								document.getElementById("order").value = testing_px;
+								document.getElementById("order").value = [testing_px];
 								//alert(testing_date);
 								//alert(tweet_txt1);
 								//use another ajax
 								//var testing_date1 = [testing_date];
-								const usingSplit = testing_date.split(',');
-								const usingSplitpx = testing_px.split(',');
+								
 								
 								var myChart3=new Chart(chr, {
 								//var chart = new Chart(ctx, {
