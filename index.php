@@ -237,7 +237,7 @@
 	<div class="navbar-fixed">
 	<nav>
 		<div class="nav-wrapper">
-			<a href="#" class="brand-logo center">Trading Results: 1</a>
+			<a href="#" class="brand-logo center">Trading Results: </a>
 			<a href="" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>		
 		</div>
 	</nav>
@@ -438,8 +438,8 @@
 								      },
 								      annotation: {
 									 //drawTime: 'afterDatasetsDraw',
-									 drawTime: 'afterDraw',
-									 annotations: testETSY
+									 drawTime: 'afterDraw'//,
+									 //annotations: testETSY
 								      }
 								   }
 						});} else if (txt=='TSLA '){
@@ -472,8 +472,8 @@
 								      },
 								      annotation: {
 									 //drawTime: 'afterDatasetsDraw',
-									 drawTime: 'afterDraw',
-									 annotations: testTSLA
+									 drawTime: 'afterDraw'//,
+									 //annotations: testTSLA
 								      }
 								   }
 						});}	else {																
@@ -505,8 +505,8 @@
 								      },
 								      annotation: {
 									 //drawTime: 'afterDatasetsDraw',
-									 drawTime: 'afterDraw',
-									 annotations: testIVW
+									 drawTime: 'afterDraw'//,
+									 //annotations: testIVW
 								      }
 								   }
 						});}	
