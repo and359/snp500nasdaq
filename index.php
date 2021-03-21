@@ -226,6 +226,7 @@
 								
 								myChart.destroy();
 								//var chr3=document.getElementById("myChart").getContext("2d");
+								
 								<?php
 								/* Database connection settings */
 								$host = 'us-cdbr-east-03.cleardb.com';
@@ -250,6 +251,8 @@
 
 								$date2 = trim($date2,",");
 								$data9 = trim($data9,",");
+								?>
+								
 								var myChart3=new Chart(chr, {
 								//var chart = new Chart(ctx, {
 								   type: 'line',
