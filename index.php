@@ -97,9 +97,6 @@
 	$data4 = '';
 	$data5 = '';
 	$data6 = '';
-	$date2 = '';
-	$data9 = '';
-	
 	
 	//query to get data from the table
 	//$sql = "SELECT * FROM `backtest` WHERE Ticker = '".$ticker."';";
@@ -149,7 +146,7 @@
 	<div class="navbar-fixed">
 	<nav>
 		<div class="nav-wrapper">
-			<a href="#" class="brand-logo center">Trading Results: 1</a>
+			<a href="#" class="brand-logo center">Trading Results: </a>
 			<a href="" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>		
 		</div>
 	</nav>
@@ -215,7 +212,7 @@
 								    dataType:"text",
 								    success:function(data)
 								    {
-								     	//txt = "";
+								     	txt = "";
 								    }
 								   });
 								  }
@@ -241,7 +238,7 @@
 								$data9 = '';
 
 								//query to get data from the table
-								$sql = "SELECT * FROM `backtest` WHERE Ticker = '".txt."';";								
+								$sql = "SELECT * FROM `backtest` WHERE Ticker = '".tweet_txt."';";								
 								$result = mysqli_query($mysqli, $sql);
 
 								//loop through the returned data
