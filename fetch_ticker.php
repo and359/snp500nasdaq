@@ -8,7 +8,7 @@
 								$mysqli = new mysqli($host,$user,$pass,$db) or die($mysqli->error);
 								$tweet1 = mysqli_real_escape_string($mysqli, $_POST["tweet1"]);
 									
-								$date2 = '';
+								
 								$data9 = '';
 
 								//query to get data from the table
@@ -19,10 +19,10 @@
 								while ($row = mysqli_fetch_array($result)) {
 
 									$data9 = $data9 . '"'. $row['Price'].'",';
-									$date2 = $date2 . '"'. $row['PriceDate'] .'",';		
+										
 								}
 
-								$date2 = trim($date2,",");
+								
 								$data9 = trim($data9,",");
                 
                 						echo $data9;
