@@ -488,7 +488,7 @@ var myChart=new Chart(chr, {
 		var myChart2=new Chart(chr2,{
 			type:'line',
 			data:{
-				labels:['Monday','Tuesday','Wednesday','Thursday','fiday'],
+				labels:['Monday','Tuesday','Wednesday','Thursday','Friday'],
 				datasets:[{
 					label:'Data Users',
 					data:[100,512,150,120,190],
