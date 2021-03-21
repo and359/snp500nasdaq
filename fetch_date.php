@@ -22,12 +22,6 @@
 
 								$date2 = trim($date2,",");
 								
-                						echo $date2;
-								//file_put_contents('mydate.txt', $date2, FILE_APPEND | LOCK_EX);
-									
-								/*$myfile = fopen("mydate.txt", "w") or die("Unable to open file!");								
-								//fwrite($myfile, $date2);
-								file_put_contents($myfile, $date2);
-								fclose($myfile);*/
+                						echo $date2;								
 								}
 								?>
