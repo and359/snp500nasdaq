@@ -146,7 +146,7 @@
 	<div class="navbar-fixed">
 	<nav>
 		<div class="nav-wrapper">
-			<a href="#" class="brand-logo center">Trading Results: 1</a>
+			<a href="#" class="brand-logo center">Trading Results: </a>
 			<a href="" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>		
 		</div>
 	</nav>
@@ -233,13 +233,13 @@
 								var testing_date; 
 								var testing_px; 
 								
-								$(document).ready(function(){$.ajax({
+								$.ajax({
 												type: 'get',
 											  url: 'fetch_ticker.php',
 											async: false,
 											method:"POST",
 											data:{tweet1:tweet_txt1},
-											  dataType:"json",
+											  //dataType:"json",
 											  success: function(data) {
 												  //testing_px = JSON.parse(data);
 												  testing_px = data;												  
@@ -248,14 +248,14 @@
 											    //$('.result').html(data);
 											  }
 											});
-											    });
-								$(document).ready(function(){$.ajax({
+											   
+								$.ajax({
 												type: 'get',
 											  url: 'fetch_date.php',
 											async: false,
 											method:"POST",
 											data:{tweet2:tweet_txt2},
-											  dataType:"json",
+											  //dataType:"json",
 											  success: function(data) {
 												  //testing_date = JSON.parse(data);
 												  //testing_date = $.parseJSON(data);
@@ -263,7 +263,7 @@
 											    //$('.result').html(data);
 											  }
 											});
-											    });
+											   
 								document.getElementById("order").value = testing_px;
 								//alert(testing_px + testing_date);
 								//alert(tweet_txt1);
