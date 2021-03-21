@@ -139,14 +139,14 @@
 	$data7 = trim($data7,",");
 	$data8 = trim($data8,",");
 	
-	echo "<script>document.writeln(txt);</script>";
+	//echo "<script>document.writeln(txt);</script>";
 	?>
 	<!--end of mysql-->
 
 	<div class="navbar-fixed">
 	<nav>
 		<div class="nav-wrapper">
-			<a href="#" class="brand-logo center">Trading Results: </a>
+			<a href="#" class="brand-logo center">Trading Results: 1</a>
 			<a href="" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>		
 		</div>
 	</nav>
@@ -227,8 +227,7 @@
 								myChart.destroy();
 								//var chr3=document.getElementById("myChart").getContext("2d");
 								
-								<?php
-								/* Database connection settings */
+								/*<?php								
 								$host = 'us-cdbr-east-03.cleardb.com';
 								$user = 'b8a00bf633cf68';
 								$pass = '1a8113a0';
@@ -252,7 +251,7 @@
 								$date2 = trim($date2,",");
 								$data9 = trim($data9,",");
 								?>
-								
+								*/
 								var myChart3=new Chart(chr, {
 								//var chart = new Chart(ctx, {
 								   type: 'line',
