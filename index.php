@@ -146,7 +146,7 @@
 	<div class="navbar-fixed">
 	<nav>
 		<div class="nav-wrapper">
-			<a href="#" class="brand-logo center">Trading Results: 1</a>
+			<a href="#" class="brand-logo center">Trading Results: </a>
 			<a href="" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>		
 		</div>
 	</nav>
@@ -241,7 +241,7 @@
 											  //dataType:"json",
 											  success: function(data) {
 												  //testing_px = JSON.parse(data);
-												  testing_px = data;
+												  testing_px = [data];
 												  //testing_px = $.parseJSON(data);
 												  
 											    //$('.result').html(data);
@@ -279,7 +279,7 @@
 									 label: 'Close Price',
 									 //data: [100,200,300],
 									 //data: [<?php echo $data1; ?>],
-									 data: [testing_px],
+									 data: testing_px,
 									 backgroundColor: 'rgba(0, 119, 290, 0.2)',
 									 borderColor: 'rgba(0, 119, 290, 0.6)'
 								      }]
