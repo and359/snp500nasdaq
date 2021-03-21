@@ -84,7 +84,7 @@
 	<div class="navbar-fixed">
 	<nav>
 		<div class="nav-wrapper">
-			<a href="#" class="brand-logo center">Trading Results: </a>
+			<a href="#" class="brand-logo center">Trading Results: 1</a>
 			<a href="" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>		
 		</div>
 	</nav>
@@ -305,8 +305,8 @@
 	//loop through the returned data
 	while ($row = mysqli_fetch_array($result)) {
 
-		$data1 = $data9 . '"'. $row['Price'].'",';
-		$date = $date2 . '"'. $row['PriceDate'] .'",';		
+		$data9 = $data9 . '"'. $row['Price'].'",';
+		$date2 = $date2 . '"'. $row['PriceDate'] .'",';		
 	}
 	
 	$data1 = trim($data1,",");
