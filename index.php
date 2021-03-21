@@ -199,7 +199,7 @@
 	<div class="navbar-fixed">
 	<nav>
 		<div class="nav-wrapper">
-			<a href="#" class="brand-logo center">Trading Results: 1</a>
+			<a href="#" class="brand-logo center">Trading Results: </a>
 			<a href="" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>		
 		</div>
 	</nav>
@@ -328,7 +328,7 @@
 								
 															
 								
-							if (txt=='ETSY'){
+							if (txt=='IVW '){
 								var myChart3=new Chart(chr, {
 								//var chart = new Chart(ctx, {
 								   type: 'line',
@@ -361,7 +361,7 @@
 									 //annotations: test5
 								      }
 								   }
-						});} else if (txt=='TSLA'){
+						});} else if (txt=='TSLA '){
 
 								var myChart3=new Chart(chr, {
 								//var chart = new Chart(ctx, {
