@@ -25,6 +25,6 @@
 								$date2 = trim($date2,",");
 								$data9 = trim($data9,",");
                 
-                						echo $data9;
+                						echo $date2;
 								}
 								?>
