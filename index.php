@@ -146,7 +146,7 @@
 	<div class="navbar-fixed">
 	<nav>
 		<div class="nav-wrapper">
-			<a href="#" class="brand-logo center">Trading Results: 1</a>
+			<a href="#" class="brand-logo center">Trading Results: </a>
 			<a href="" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>		
 		</div>
 	</nav>
@@ -241,7 +241,7 @@
 											  //dataType:"json",
 											  success: function(data) {
 												  //testing_px = JSON.parse(data);
-												  testing_px = [data];
+												  testing_px = data;												  
 												  //testing_px = $.parseJSON(data);
 												  
 											    //$('.result').html(data);
@@ -261,8 +261,8 @@
 											    //$('.result').html(data);
 											  }
 											});
-								document.getElementById("order").value = testing_px;
-								//alert(testing_date);
+								document.getElementById("order").value = testing_px + testing_date;
+								alert(testing_px + testing_date);
 								//alert(tweet_txt1);
 								//use another ajax
 								//var testing_date1 = [testing_date];
