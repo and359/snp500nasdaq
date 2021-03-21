@@ -181,15 +181,25 @@
 	$B_SETSY = '';
 	$B_STSLA = '';
 	$B_SIVW = '';
+	$B_SPxETSY = '';
+	$B_SPxTSLA = '';
+	$B_SPxIVW = '';
+	$B_SDateETSY = '';
+	$B_SDateTSLA = '';
+	$B_SDateIVW = '';
 	
 	//ETSY BS
 	$sql = "select * from `heroku_69459908ed082cc`.`buy_sell` where Ticker = 'ETSY';";
     	$result = mysqli_query($mysqli, $sql);
 	while ($row = mysqli_fetch_array($result)) {		
 		$B_SETSY = $B_SETSY . '"'. $row['BuySell'].'",';
+		$B_SPxETSY = $B_SPxETSY . '"'. $row['Price'].'",';
+		$B_SDateETSY = $B_SDateETSY . '"'. $row['TradeDate'].'",';
 	}
 
 	$B_SETSY = trim($B_SETSY,",");
+	$B_SPxETSY = trim($B_SPxETSY,",");
+	$B_SDateETSY = trim($B_SDateETSY,",");
 	//end of ETSY BS
 	
 	
@@ -198,9 +208,13 @@
     	$result = mysqli_query($mysqli, $sql);
 	while ($row = mysqli_fetch_array($result)) {		
 		$B_STSLA = $B_STSLA . '"'. $row['BuySell'].'",';
+		$B_SPxTSLA = $B_SPxTSLA . '"'. $row['Price'].'",';
+		$B_SDateTSLA = $B_SDateTSLA . '"'. $row['TradeDate'].'",';
 	}
 
 	$B_STSLA = trim($B_STSLA,",");
+	$B_SPxTSLA = trim($B_SPxTSLA,",");
+	$B_SDateTSLA = trim($B_SDateTSLA,",");
 	//end of TSLA BS
 	
 	
@@ -209,9 +223,13 @@
     	$result = mysqli_query($mysqli, $sql);
 	while ($row = mysqli_fetch_array($result)) {		
 		$B_SIVW = $B_SIVW . '"'. $row['BuySell'].'",';
+		$B_SPxIVW = $B_SPxIVW . '"'. $row['Price'].'",';
+		$B_SDateIVW = $B_SDateIVW . '"'. $row['TradeDate'].'",';
 	}
 
 	$B_SIVW = trim($B_SIVW,",");
+	$B_SPxIVW = trim($B_SPxIVW,",");
+	$B_SDateIVW = trim($B_SDateIVW,",");
 	//end of IVW BS
 	
 	$sql = "select * from `heroku_69459908ed082cc`.`buy_sell`;";
@@ -239,7 +257,7 @@
 	<div class="navbar-fixed">
 	<nav>
 		<div class="nav-wrapper">
-			<a href="#" class="brand-logo center">Trading Results: </a>
+			<a href="#" class="brand-logo center">Trading Results: 1</a>
 			<a href="" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>		
 		</div>
 	</nav>
@@ -366,15 +384,16 @@
 								//use another ajax
 								//var testing_date1 = [testing_date];
 							
-							var amountETSY = [<?php echo $pxETSY; ?>];
-							var amountTSLA = [<?php echo $pxTSLA; ?>];
-							var amountIVW = [<?php echo $pxIVW; ?>];
-							var marketingETSY = [<?php echo $dateETSY; ?>];	
-							var marketingTSLA = [<?php echo $dateTSLA; ?>];	
-							var marketingIVW = [<?php echo $dateIVW; ?>];	
+							var amountETSY = [<?php echo $B_SPxETSY; ?>];
+							var amountTSLA = [<?php echo $B_SPxTSLA; ?>];
+							var amountIVW = [<?php echo $B_SPxIVW; ?>];
+							var marketingETSY = [<?php echo $B_SDateETSY; ?>];	
+							var marketingTSLA = [<?php echo $B_SDateTSLA; ?>];	
+							var marketingIVW = [<?php echo $B_SDateIVW; ?>];	
 							var B_SETSY = [<?php echo $B_SETSY; ?>];
 							var B_STSLA = [<?php echo $B_STSLA; ?>];
 							var B_SIVW = [<?php echo $B_SIVW; ?>];
+
 								
 							var testETSY = marketingETSY.map(function(dateETSYv, indexETSY) {
 		
