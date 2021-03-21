@@ -80,11 +80,96 @@
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
 <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
+<!--get data from mysql-->
+	<?php
 	
+	/*$connect = mysqli_connect("us-cdbr-east-03.cleardb.com","b11d6e54534643","318fd8ce","heroku_a7bcbc3dd84756e");
+	$query = "SELECT * FROM heroku_a7bcbc3dd84756e.single_stock_selected";
+	$result0 = mysqli_query($connect, $query);
+	$row0 = mysqli_fetch_array($result0)
+	$ticker = $row["Ticker"];*/
+	
+	/* Database connection settings */
+	$host = 'us-cdbr-east-03.cleardb.com';
+	$user = 'b8a00bf633cf68';
+	$pass = '1a8113a0';
+	$db = 'heroku_69459908ed082cc';
+	$mysqli = new mysqli($host,$user,$pass,$db) or die($mysqli->error);
+
+	$data1 = '';
+	$data2 = '';
+	$date = '';
+	$data3 = '';
+	$data4 = '';
+	$data5 = '';
+	$data6 = '';
+	$date2 = '';
+	$data9 = '';
+	
+	
+	//query to get data from the table
+	//$sql = "SELECT * FROM `backtest` WHERE Ticker = '".$ticker."';";
+	$sql = "SELECT * FROM `backtest` WHERE Ticker = 'IVW';";
+    	$result = mysqli_query($mysqli, $sql);
+
+	//loop through the returned data
+	while ($row = mysqli_fetch_array($result)) {
+
+		$data1 = $data1 . '"'. $row['Price'].'",';
+		$date = $date . '"'. $row['PriceDate'] .'",';
+		$data6 = $data6 . '"'. $row['UnixTime'].'",';
+	}
+	
+	//new set of data from same DB
+	$sql = "SELECT * FROM `backtest` WHERE Ticker = 'ETSY';";
+    	$result = mysqli_query($mysqli, $sql);
+
+	//loop through the returned data
+	while ($row = mysqli_fetch_array($result)) {
+
+		$data9 = $data9 . '"'. $row['Price'].'",';
+		$date2 = $date2 . '"'. $row['PriceDate'] .'",';		
+	}
+	
+	$data1 = trim($data1,",");
+	//$data2 = trim($data2,",");
+	$date = trim($date,",");
+	$data6 = trim($data6,",");
+	$date2 = trim($date2,",");
+	$data9 = trim($data9,",");
+	
+	$sql = "select Ticker from `heroku_69459908ed082cc`.`backtest` order by Ticker desc limit 1;";
+    	$result = mysqli_query($mysqli, $sql);
+	$row = mysqli_fetch_array($result);
+	$data2 = $data2 . $row['Ticker'];
+	
+	$sql = "select * from `heroku_69459908ed082cc`.`buy_sell`;";
+    	$result = mysqli_query($mysqli, $sql);
+	while ($row = mysqli_fetch_array($result)) {
+
+		$data3 = $data3 . '"'. $row['TradeDate'].'",';
+		$data4 = $data4 . '"'. $row['Remarks'].'",';
+		$data5 = $data5 . '"'. $row['BuySell'].'",';
+		$data7 = $data7 . '"'. $row['UnixTime'].'",';
+		$data8 = $data8 . '"'. $row['Price'].'",';
+		
+	}
+
+	$data3 = trim($data3,",");
+	$data4 = trim($data4,",");
+	$data5 = trim($data5,",");
+	$data7 = trim($data7,",");
+	$data8 = trim($data8,",");
+	
+	echo "<script>document.writeln(txt);</script>";
+	?>
+	<!--end of mysql-->
+
 	<div class="navbar-fixed">
 	<nav>
 		<div class="nav-wrapper">
-			<a href="#" class="brand-logo center">Trading Results: 1</a>
+			<a href="#" class="brand-logo center">Trading Results: </a>
 			<a href="" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>		
 		</div>
 	</nav>
@@ -261,90 +346,7 @@
 	</div>
 	</div>
 	
-	<!--get data from mysql-->
-	<?php
 	
-	/*$connect = mysqli_connect("us-cdbr-east-03.cleardb.com","b11d6e54534643","318fd8ce","heroku_a7bcbc3dd84756e");
-	$query = "SELECT * FROM heroku_a7bcbc3dd84756e.single_stock_selected";
-	$result0 = mysqli_query($connect, $query);
-	$row0 = mysqli_fetch_array($result0)
-	$ticker = $row["Ticker"];*/
-	
-	/* Database connection settings */
-	$host = 'us-cdbr-east-03.cleardb.com';
-	$user = 'b8a00bf633cf68';
-	$pass = '1a8113a0';
-	$db = 'heroku_69459908ed082cc';
-	$mysqli = new mysqli($host,$user,$pass,$db) or die($mysqli->error);
-
-	$data1 = '';
-	$data2 = '';
-	$date = '';
-	$data3 = '';
-	$data4 = '';
-	$data5 = '';
-	$data6 = '';
-	$date2 = '';
-	$data9 = '';
-	
-	
-	//query to get data from the table
-	//$sql = "SELECT * FROM `backtest` WHERE Ticker = '".$ticker."';";
-	$sql = "SELECT * FROM `backtest` WHERE Ticker = 'IVW';";
-    	$result = mysqli_query($mysqli, $sql);
-
-	//loop through the returned data
-	while ($row = mysqli_fetch_array($result)) {
-
-		$data1 = $data1 . '"'. $row['Price'].'",';
-		$date = $date . '"'. $row['PriceDate'] .'",';
-		$data6 = $data6 . '"'. $row['UnixTime'].'",';
-	}
-	
-	//new set of data from same DB
-	$sql = "SELECT * FROM `backtest` WHERE Ticker = 'ETSY';";
-    	$result = mysqli_query($mysqli, $sql);
-
-	//loop through the returned data
-	while ($row = mysqli_fetch_array($result)) {
-
-		$data9 = $data9 . '"'. $row['Price'].'",';
-		$date2 = $date2 . '"'. $row['PriceDate'] .'",';		
-	}
-	
-	$data1 = trim($data1,",");
-	//$data2 = trim($data2,",");
-	$date = trim($date,",");
-	$data6 = trim($data6,",");
-	$date2 = trim($date2,",");
-	$data9 = trim($data9,",");
-	
-	$sql = "select Ticker from `heroku_69459908ed082cc`.`backtest` order by Ticker desc limit 1;";
-    	$result = mysqli_query($mysqli, $sql);
-	$row = mysqli_fetch_array($result);
-	$data2 = $data2 . $row['Ticker'];
-	
-	$sql = "select * from `heroku_69459908ed082cc`.`buy_sell`;";
-    	$result = mysqli_query($mysqli, $sql);
-	while ($row = mysqli_fetch_array($result)) {
-
-		$data3 = $data3 . '"'. $row['TradeDate'].'",';
-		$data4 = $data4 . '"'. $row['Remarks'].'",';
-		$data5 = $data5 . '"'. $row['BuySell'].'",';
-		$data7 = $data7 . '"'. $row['UnixTime'].'",';
-		$data8 = $data8 . '"'. $row['Price'].'",';
-		
-	}
-
-	$data3 = trim($data3,",");
-	$data4 = trim($data4,",");
-	$data5 = trim($data5,",");
-	$data7 = trim($data7,",");
-	$data8 = trim($data8,",");
-	
-	echo "<script>document.writeln(txt);</script>";
-	?>
-	<!--end of mysql-->
 	
 	<div class="content bg">
 	<div class="container">
@@ -428,10 +430,10 @@ var myChart=new Chart(chr, {
 		//var chart = new Chart(ctx, {
 		   type: 'line',
 		   data: {
-			labels: [<?php echo $date2; ?>],
+			labels: [<?php echo $date; ?>],
 		      datasets: [{
 			 label: 'Close Price',
-			 data: [<?php echo $data9; ?>],
+			 data: [<?php echo $data1; ?>],
 			 backgroundColor: 'rgba(0, 119, 290, 0.2)',
 			 borderColor: 'rgba(0, 119, 290, 0.6)'
 		      }]
