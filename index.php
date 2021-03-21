@@ -227,7 +227,12 @@
 								myChart.destroy();
 								//var chr3=document.getElementById("myChart").getContext("2d");
 								
-								var testing_date = ""
+								var testing_date = $.ajax({
+											  url: 'fetch_ticker.php',
+											  success: function(data) {
+											    $('.result').html(data);
+											  }
+											});
 								//use another ajax
 								
 								var myChart3=new Chart(chr, {
