@@ -84,7 +84,7 @@
 	<div class="navbar-fixed">
 	<nav>
 		<div class="nav-wrapper">
-			<a href="#" class="brand-logo center">Trading Results: </a>
+			<a href="#" class="brand-logo center">Trading Results: 1</a>
 			<a href="" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>		
 		</div>
 	</nav>
@@ -377,6 +377,8 @@
 		var px4 = [<?php echo $data8; ?>];
 		var B_S = [<?php echo $data5; ?>];
 		var marketing4 = [<?php echo $data3; ?>];
+		var amount5 = [<?php echo $data9; ?>];
+		var date5 = [<?php echo $date2; ?>];
 		var txt = "";
 		
 		var test3 = marketing.map(function(date1, index1) {
@@ -426,10 +428,10 @@ var myChart=new Chart(chr, {
 		//var chart = new Chart(ctx, {
 		   type: 'line',
 		   data: {
-			labels: [<?php echo $date; ?>],
+			labels: [<?php echo $date2; ?>],
 		      datasets: [{
 			 label: 'Close Price',
-			 data: [<?php echo $data1; ?>],
+			 data: [<?php echo $data9; ?>],
 			 backgroundColor: 'rgba(0, 119, 290, 0.2)',
 			 borderColor: 'rgba(0, 119, 290, 0.6)'
 		      }]
