@@ -146,7 +146,7 @@
 	<div class="navbar-fixed">
 	<nav>
 		<div class="nav-wrapper">
-			<a href="#" class="brand-logo center">Trading Results: </a>
+			<a href="#" class="brand-logo center">Trading Results: 1</a>
 			<a href="" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>		
 		</div>
 	</nav>
@@ -227,15 +227,18 @@
 								myChart.destroy();
 								//var chr3=document.getElementById("myChart").getContext("2d");
 								var tweet_txt1 = txt;
-								var testing_date = $.ajax({
+								var testing_date; 
+								$.ajax({
 												type: 'get',
 											  url: 'fetch_ticker.php',
+											async: false,
 											method:"POST",
 											data:{tweet1:tweet_txt1},
 											  dataType:"text",
 											  success: function(data) {
+												  testing_date = data;
 												  //alert(data);
-											    $('.result').html(data);
+											    //$('.result').html(data);
 											  }
 											});
 								var testjs = $.ajax({
