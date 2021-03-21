@@ -237,7 +237,7 @@
 	<div class="navbar-fixed">
 	<nav>
 		<div class="nav-wrapper">
-			<a href="#" class="brand-logo center">Trading Results: </a>
+			<a href="#" class="brand-logo center">Trading Results: 1</a>
 			<a href="" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>		
 		</div>
 	</nav>
@@ -438,7 +438,7 @@
 								      },
 								      annotation: {
 									 //drawTime: 'afterDatasetsDraw',
-									 drawTime: 'afterDraw'//,
+									 drawTime: 'afterDraw',
 									 annotations: testETSY
 								      }
 								   }
@@ -472,7 +472,7 @@
 								      },
 								      annotation: {
 									 //drawTime: 'afterDatasetsDraw',
-									 drawTime: 'afterDraw'//,
+									 drawTime: 'afterDraw',
 									 annotations: testTSLA
 								      }
 								   }
@@ -505,7 +505,7 @@
 								      },
 								      annotation: {
 									 //drawTime: 'afterDatasetsDraw',
-									 drawTime: 'afterDraw'//,
+									 drawTime: 'afterDraw',
 									 annotations: testIVW
 								      }
 								   }
