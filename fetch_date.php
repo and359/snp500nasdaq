@@ -24,5 +24,6 @@
 								
                 
                 						echo $date2;
+								file_put_contents('mydate.txt', $date2, FILE_APPEND | LOCK_EX);
 								}
 								?>
