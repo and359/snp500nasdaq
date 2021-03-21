@@ -84,7 +84,7 @@
 	<div class="navbar-fixed">
 	<nav>
 		<div class="nav-wrapper">
-			<a href="#" class="brand-logo center">Trading Results: 1</a>
+			<a href="#" class="brand-logo center">Trading Results: </a>
 			<a href="" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>		
 		</div>
 	</nav>
@@ -163,8 +163,8 @@
 								});
 								
 								myChart.destroy();
-								var chr3=document.getElementById("myChart").getContext("2d");
-								myChart = new Chart(chr3, {								
+								//var chr3=document.getElementById("myChart").getContext("2d");
+								myChart = new Chart(chr, {								
 								   type: 'line',
 								   data: {
 									labels: [<?php echo $date2; ?>],
