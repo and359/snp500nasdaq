@@ -146,7 +146,7 @@
 	<div class="navbar-fixed">
 	<nav>
 		<div class="nav-wrapper">
-			<a href="#" class="brand-logo center">Trading Results: 1</a>
+			<a href="#" class="brand-logo center">Trading Results: </a>
 			<a href="" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>		
 		</div>
 	</nav>
@@ -237,19 +237,13 @@
 											  dataType:"text",
 											  success: function(data) {
 												  testing_date = data;
-												  alert(testing_date);
-												  alert(tweet_txt1);
+												  
 											    //$('.result').html(data);
 											  }
 											});
-								var testjs = $.ajax({
-											type: 'get',
-										  url: 'test.php',
-										  success: function(data) {
-											//alert(data);
-										    $('.result').html(data);
-										  }
-										});
+								
+								alert(testing_date);
+								alert(tweet_txt1);
 								//use another ajax
 								
 								var myChart3=new Chart(chr, {
