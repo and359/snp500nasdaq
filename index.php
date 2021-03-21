@@ -146,7 +146,7 @@
 	<div class="navbar-fixed">
 	<nav>
 		<div class="nav-wrapper">
-			<a href="#" class="brand-logo center">Trading Results: </a>
+			<a href="#" class="brand-logo center">Trading Results: 1</a>
 			<a href="" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>		
 		</div>
 	</nav>
@@ -245,7 +245,7 @@
 								//alert(testing_date);
 								//alert(tweet_txt1);
 								//use another ajax
-								var testing_date1 = [testing_date];
+								//var testing_date1 = [testing_date];
 								
 								var myChart3=new Chart(chr, {
 								//var chart = new Chart(ctx, {
@@ -253,7 +253,7 @@
 								   data: {
 									//labels: [<?php echo $date; ?>],
 									   //labels: ["17/03/2020","13/04/2020","01/05/2020"],
-									   labels: testing_date1,
+									   labels: [testing_date],
 								      datasets: [{
 									 label: 'Close Price',
 									 //data: [100,200,300],
