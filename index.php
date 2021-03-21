@@ -83,13 +83,6 @@
 
 <!--get data from mysql-->
 	<?php
-	
-	/*$connect = mysqli_connect("us-cdbr-east-03.cleardb.com","b11d6e54534643","318fd8ce","heroku_a7bcbc3dd84756e");
-	$query = "SELECT * FROM heroku_a7bcbc3dd84756e.single_stock_selected";
-	$result0 = mysqli_query($connect, $query);
-	$row0 = mysqli_fetch_array($result0)
-	$ticker = $row["Ticker"];*/
-	
 	/* Database connection settings */
 	$host = 'us-cdbr-east-03.cleardb.com';
 	$user = 'b8a00bf633cf68';
@@ -110,7 +103,7 @@
 	
 	//query to get data from the table
 	//$sql = "SELECT * FROM `backtest` WHERE Ticker = '".$ticker."';";
-	$sql = "SELECT * FROM `backtest` WHERE Ticker = 'IVW';";
+	$sql = "SELECT * FROM `backtest`;";
     	$result = mysqli_query($mysqli, $sql);
 
 	//loop through the returned data
@@ -121,23 +114,10 @@
 		$data6 = $data6 . '"'. $row['UnixTime'].'",';
 	}
 	
-	//new set of data from same DB
-	$sql = "SELECT * FROM `backtest` WHERE Ticker = 'ETSY';";
-    	$result = mysqli_query($mysqli, $sql);
-
-	//loop through the returned data
-	while ($row = mysqli_fetch_array($result)) {
-
-		$data9 = $data9 . '"'. $row['Price'].'",';
-		$date2 = $date2 . '"'. $row['PriceDate'] .'",';		
-	}
-	
 	$data1 = trim($data1,",");
 	//$data2 = trim($data2,",");
 	$date = trim($date,",");
 	$data6 = trim($data6,",");
-	$date2 = trim($date2,",");
-	$data9 = trim($data9,",");
 	
 	$sql = "select Ticker from `heroku_69459908ed082cc`.`backtest` order by Ticker desc limit 1;";
     	$result = mysqli_query($mysqli, $sql);
@@ -169,7 +149,7 @@
 	<div class="navbar-fixed">
 	<nav>
 		<div class="nav-wrapper">
-			<a href="#" class="brand-logo center">Trading Results: </a>
+			<a href="#" class="brand-logo center">Trading Results: 1</a>
 			<a href="" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>		
 		</div>
 	</nav>
@@ -235,7 +215,7 @@
 								    dataType:"text",
 								    success:function(data)
 								    {
-								     	txt = "";
+								     	//txt = "";
 								    }
 								   });
 								  }
@@ -249,6 +229,30 @@
 								
 								myChart.destroy();
 								//var chr3=document.getElementById("myChart").getContext("2d");
+								<?php
+								/* Database connection settings */
+								$host = 'us-cdbr-east-03.cleardb.com';
+								$user = 'b8a00bf633cf68';
+								$pass = '1a8113a0';
+								$db = 'heroku_69459908ed082cc';
+								$mysqli = new mysqli($host,$user,$pass,$db) or die($mysqli->error);
+								
+								$date2 = '';
+								$data9 = '';
+
+								//query to get data from the table
+								$sql = "SELECT * FROM `backtest` WHERE Ticker = '".txt."';";								
+								$result = mysqli_query($mysqli, $sql);
+
+								//loop through the returned data
+								while ($row = mysqli_fetch_array($result)) {
+
+									$data9 = $data9 . '"'. $row['Price'].'",';
+									$date2 = $date2 . '"'. $row['PriceDate'] .'",';		
+								}
+
+								$date2 = trim($date2,",");
+								$data9 = trim($data9,",");
 								var myChart3=new Chart(chr, {
 								//var chart = new Chart(ctx, {
 								   type: 'line',
@@ -381,7 +385,7 @@
 		var marketing4 = [<?php echo $data3; ?>];
 		var amount5 = [<?php echo $data9; ?>];
 		var date5 = [<?php echo $date2; ?>];
-		var txt = "";
+		//var txt = "";
 		
 		var test3 = marketing.map(function(date1, index1) {
 		
