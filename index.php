@@ -84,7 +84,7 @@
 	<div class="navbar-fixed">
 	<nav>
 		<div class="nav-wrapper">
-			<a href="#" class="brand-logo center">Trading Results: 1</a>
+			<a href="#" class="brand-logo center">Trading Results: </a>
 			<a href="" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>		
 		</div>
 	</nav>
@@ -164,13 +164,15 @@
 								
 								myChart.destroy();
 								var chr3=document.getElementById("myChart").getContext("2d");
-								myChart = new Chart(chr3, {								
+								var myChart3=new Chart(chr3, {
+								//var chart = new Chart(ctx, {
 								   type: 'line',
 								   data: {
-									labels: ["17/03/2020","13/04/2020","01/05/2020"],
+									//labels: [<?php echo $date; ?>],
+									   labels: ["17/03/2020","13/04/2020","01/05/2020"],
 								      datasets: [{
 									 label: 'Close Price',
-									 data: ["100","200","300"],
+									 data: [100,200,300],
 									 backgroundColor: 'rgba(0, 119, 290, 0.2)',
 									 borderColor: 'rgba(0, 119, 290, 0.6)'
 								      }]
@@ -189,7 +191,7 @@
 									 annotations: //test5
 								      }
 								   }
-								});*/
+								});
                   					}
 							
 							
