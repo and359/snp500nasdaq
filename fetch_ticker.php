@@ -18,7 +18,7 @@
 								//loop through the returned data
 								while ($row = mysqli_fetch_array($result)) {
 
-									$data9 = $data9 . '"'. $row['PriceDate'].'",';
+									$data9 = $data9 . '"'. $row['Price'].'",';
 										
 								}
 
