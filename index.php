@@ -146,7 +146,7 @@
 	<div class="navbar-fixed">
 	<nav>
 		<div class="nav-wrapper">
-			<a href="#" class="brand-logo center">Trading Results: </a>
+			<a href="#" class="brand-logo center">Trading Results: 1</a>
 			<a href="" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>		
 		</div>
 	</nav>
@@ -238,6 +238,7 @@
 											  success: function(data) {
 												  testing_date = data;
 												  alert(testing_date);
+												  alert(tweet_txt1);
 											    //$('.result').html(data);
 											  }
 											});
