@@ -9,7 +9,7 @@
 								$tweet1 = mysqli_real_escape_string($mysqli, $_POST["tweet3"]);
 									
 								
-								$date3 = '';
+								$date2 = '';
 
 								//query to get data from the table
 								$sql = "SELECT * FROM `backtest` WHERE Ticker = '".$tweet3."';";
@@ -18,13 +18,13 @@
 								//loop through the returned data
 								while ($row = mysqli_fetch_array($result)) {
 
-									$date3 = $date3 . '"'. $row['PriceDate'].'",';
+									$date2 = $date2 . '"'. $row['PriceDate'].'",';
 										
 								}
 
 								
-								$date3 = trim($date3,",");
+								$date2 = trim($date2,",");
                 
-                						echo $date3;
+                						echo $date2;
 								}
 								?>
