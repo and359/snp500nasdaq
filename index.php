@@ -146,7 +146,7 @@
 	<div class="navbar-fixed">
 	<nav>
 		<div class="nav-wrapper">
-			<a href="#" class="brand-logo center">Trading Results: </a>
+			<a href="#" class="brand-logo center">Trading Results: 1</a>
 			<a href="" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>		
 		</div>
 	</nav>
@@ -239,7 +239,8 @@
 											  //dataType:"json",
 											  success: function(data) {
 												  //testing_px = JSON.parse(data);
-												  testing_px = data;
+												  //testing_px = data;
+												  testing_px = $.parseJSON(data);
 												  
 											    //$('.result').html(data);
 											  }
@@ -252,8 +253,8 @@
 											data:{tweet2:tweet_txt2},
 											  //dataType:"json",
 											  success: function(data) {
-												  testing_date = JSON.parse(data);
-												  
+												  //testing_date = JSON.parse(data);
+												  testing_date = $.parseJSON(data);
 											    //$('.result').html(data);
 											  }
 											});
