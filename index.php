@@ -174,6 +174,44 @@
 	$row = mysqli_fetch_array($result);
 	$data2 = $data2 . $row['Ticker'];
 	
+	
+	
+	$B_SETSY = '';
+	$B_STSLA = '';
+	$B_SIVW = '';
+	
+	//ETSY BS
+	$sql = "select * from `heroku_69459908ed082cc`.`buy_sell` where Ticker = 'ETSY';";
+    	$result = mysqli_query($mysqli, $sql);
+	while ($row = mysqli_fetch_array($result)) {		
+		$B_SETSY = $B_SETSY . '"'. $row['BuySell'].'",';
+	}
+
+	$B_SETSY = trim($B_SETSY,",");
+	//end of ETSY BS
+	
+	
+	//TSLA BS
+	$sql = "select * from `heroku_69459908ed082cc`.`buy_sell` where Ticker = 'TSLA';";
+    	$result = mysqli_query($mysqli, $sql);
+	while ($row = mysqli_fetch_array($result)) {		
+		$B_STSLA = $B_STSLA . '"'. $row['BuySell'].'",';
+	}
+
+	$B_STSLA = trim($B_STSLA,",");
+	//end of TSLA BS
+	
+	
+	//IVW BS
+	$sql = "select * from `heroku_69459908ed082cc`.`buy_sell` where Ticker = 'IVW';";
+    	$result = mysqli_query($mysqli, $sql);
+	while ($row = mysqli_fetch_array($result)) {		
+		$B_SIVW = $B_SIVW . '"'. $row['BuySell'].'",';
+	}
+
+	$B_SIVW = trim($B_SIVW,",");
+	//end of IVW BS
+	
 	$sql = "select * from `heroku_69459908ed082cc`.`buy_sell`;";
     	$result = mysqli_query($mysqli, $sql);
 	while ($row = mysqli_fetch_array($result)) {
@@ -199,7 +237,7 @@
 	<div class="navbar-fixed">
 	<nav>
 		<div class="nav-wrapper">
-			<a href="#" class="brand-logo center">Trading Results: 1</a>
+			<a href="#" class="brand-logo center">Trading Results: </a>
 			<a href="" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>		
 		</div>
 	</nav>
@@ -325,8 +363,51 @@
 								//alert(tweet_txt1);
 								//use another ajax
 								//var testing_date1 = [testing_date];
+							
+							var amountETSY = [<?php echo $pxETSY; ?>];
+							var marketingETSY = [<?php echo $dateETSY; ?>];	
+							var marketingTSLA = [<?php echo $dateTSLA; ?>];	
+							var marketingIVW = [<?php echo $dateIVW; ?>];	
+							var B_SETSY = [<?php echo $B_SETSY; ?>];
+							var B_STSLA = [<?php echo $B_STSLA; ?>];
+							var B_SIVW = [<?php echo $B_SIVW; ?>];
 								
-															
+							var testETSY = marketingETSY.map(function(dateETSYv, indexETSY) {
+		
+								if (B_SETSY[indexETSY]=='Buy'){
+								return {
+								type: 'line', borderColor: 'green', id: 'vline' + indexETSY, mode: 'vertical', scaleID: 'x-axis-0', value: dateETSYv, borderWidth: 1, label: {enabled: true, position: "bottom", content: pxETSY[indexETSY]}}
+								} else {
+								return{
+								type: 'line', borderColor: 'red', id: 'vline' + indexETSY, mode: 'vertical', scaleID: 'x-axis-0', value: dateETSYv, borderWidth: 1, label: {enabled: true, position: "top", content: pxETSY[indexETSY]}}
+								};
+
+							});			
+							
+							var testTSLA = marketingTSLA.map(function(dateTSLAv, indexTSLA) {
+		
+								if (B_STSLA[indexTSLA]=='Buy'){
+								return {
+								type: 'line', borderColor: 'green', id: 'vline' + indexTSLA, mode: 'vertical', scaleID: 'x-axis-0', value: dateTSLAv, borderWidth: 1, label: {enabled: true, position: "bottom", content: pxTSLA[indexTSLA]}}
+								} else {
+								return{
+								type: 'line', borderColor: 'red', id: 'vline' + indexTSLA, mode: 'vertical', scaleID: 'x-axis-0', value: dateTSLAv, borderWidth: 1, label: {enabled: true, position: "top", content: pxTSLA[indexTSLA]}}
+								};
+
+							});			
+								
+							var testIVW = marketingIVW.map(function(dateIVWv, indexIVW) {
+		
+								if (B_SIVW[indexIVW]=='Buy'){
+								return {
+								type: 'line', borderColor: 'green', id: 'vline' + indexIVW, mode: 'vertical', scaleID: 'x-axis-0', value: dateIVWv, borderWidth: 1, label: {enabled: true, position: "bottom", content: pxIVW[indexIVW]}}
+								} else {
+								return{
+								type: 'line', borderColor: 'red', id: 'vline' + indexIVW, mode: 'vertical', scaleID: 'x-axis-0', value: dateIVWv, borderWidth: 1, label: {enabled: true, position: "top", content: pxIVW[indexIVW]}}
+								};
+
+							});		
+							
 								
 							if (txt=='ETSY '){
 								var myChart3=new Chart(chr, {
@@ -358,7 +439,7 @@
 								      annotation: {
 									 //drawTime: 'afterDatasetsDraw',
 									 drawTime: 'afterDraw'//,
-									 //annotations: test5
+									 annotations: testETSY
 								      }
 								   }
 						});} else if (txt=='TSLA '){
@@ -392,7 +473,7 @@
 								      annotation: {
 									 //drawTime: 'afterDatasetsDraw',
 									 drawTime: 'afterDraw'//,
-									 //annotations: test5
+									 annotations: testTSLA
 								      }
 								   }
 						});}	else {																
@@ -425,7 +506,7 @@
 								      annotation: {
 									 //drawTime: 'afterDatasetsDraw',
 									 drawTime: 'afterDraw'//,
-									 //annotations: test5
+									 annotations: testIVW
 								      }
 								   }
 						});}	
