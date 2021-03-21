@@ -146,7 +146,7 @@
 	<div class="navbar-fixed">
 	<nav>
 		<div class="nav-wrapper">
-			<a href="#" class="brand-logo center">Trading Results: </a>
+			<a href="#" class="brand-logo center">Trading Results: 1</a>
 			<a href="" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>		
 		</div>
 	</nav>
@@ -227,7 +227,8 @@
 								myChart.destroy();
 								//var chr3=document.getElementById("myChart").getContext("2d");
 								
-
+								var testing_date = ""
+								//use another ajax
 								
 								var myChart3=new Chart(chr, {
 								//var chart = new Chart(ctx, {
