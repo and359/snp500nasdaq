@@ -146,7 +146,7 @@
 	<div class="navbar-fixed">
 	<nav>
 		<div class="nav-wrapper">
-			<a href="#" class="brand-logo center">Trading Results: </a>
+			<a href="#" class="brand-logo center">Trading Results: 1</a>
 			<a href="" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>		
 		</div>
 	</nav>
@@ -212,7 +212,7 @@
 								    dataType:"text",
 								    success:function(data)
 								    {
-								     	txt = "";
+								     	txt = txt;
 								    }
 								   });
 								  }
@@ -226,11 +226,11 @@
 								
 								myChart.destroy();
 								//var chr3=document.getElementById("myChart").getContext("2d");
-								
+								var tweet_txt1 = txt;
 								var testing_date = $.ajax({											    
 											  url: 'fetch_ticker.php',
 											method:"POST",
-											data:{tweet1:tweet_txt},
+											data:{tweet1:tweet_txt1},
 											  dataType:"text",
 											  success: function(data) {
 											    $('.result').html(data);
