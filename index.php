@@ -146,7 +146,7 @@
 	<div class="navbar-fixed">
 	<nav>
 		<div class="nav-wrapper">
-			<a href="#" class="brand-logo center">Trading Results: 1</a>
+			<a href="#" class="brand-logo center">Trading Results: </a>
 			<a href="" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>		
 		</div>
 	</nav>
@@ -229,7 +229,7 @@
 								myChart.destroy();
 								//var chr3=document.getElementById("myChart").getContext("2d");
 								var tweet_txt1 = txt;
-								var tweet_txt2 = txt;
+								var tweet_txt3 = txt;
 								var testing_date; 
 								var testing_px; 
 								
@@ -254,7 +254,7 @@
 											  url: 'fetch_date.php',
 											async: false,
 											method:"POST",
-											data:{tweet2:tweet_txt2},
+											data:{tweet3:tweet_txt3},
 											  //dataType:"json",
 											  success: function(data) {
 												  //testing_px = JSON.parse(data);
