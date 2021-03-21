@@ -122,6 +122,7 @@
 	$date = trim($date,",");
 	$data6 = trim($data6,",");
 	
+	
 	//ETSY
 	$sql = "SELECT * FROM `backtest` WHERE Ticker = 'ETSY';";
     	$result = mysqli_query($mysqli, $sql);
@@ -168,6 +169,7 @@
 	$pxIVW = trim($pxIVW,",");
 	$dateIVW = trim($dateIVW,",");
 	//end of IVW
+	
 	
 	$sql = "select Ticker from `heroku_69459908ed082cc`.`backtest` order by Ticker desc limit 1;";
     	$result = mysqli_query($mysqli, $sql);
@@ -237,7 +239,7 @@
 	<div class="navbar-fixed">
 	<nav>
 		<div class="nav-wrapper">
-			<a href="#" class="brand-logo center">Trading Results: </a>
+			<a href="#" class="brand-logo center">Trading Results: 1</a>
 			<a href="" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>		
 		</div>
 	</nav>
@@ -365,6 +367,8 @@
 								//var testing_date1 = [testing_date];
 							
 							var amountETSY = [<?php echo $pxETSY; ?>];
+							var amountTSLA = [<?php echo $pxTSLA; ?>];
+							var amountIVW = [<?php echo $pxIVW; ?>];
 							var marketingETSY = [<?php echo $dateETSY; ?>];	
 							var marketingTSLA = [<?php echo $dateTSLA; ?>];	
 							var marketingIVW = [<?php echo $dateIVW; ?>];	
@@ -376,10 +380,10 @@
 		
 								if (B_SETSY[indexETSY]=='Buy'){
 								return {
-								type: 'line', borderColor: 'green', id: 'vline' + indexETSY, mode: 'vertical', scaleID: 'x-axis-0', value: dateETSYv, borderWidth: 1, label: {enabled: true, position: "bottom", content: pxETSY[indexETSY]}}
+								type: 'line', borderColor: 'green', id: 'vline' + indexETSY, mode: 'vertical', scaleID: 'x-axis-0', value: dateETSYv, borderWidth: 1, label: {enabled: true, position: "bottom", content: amountETSY[indexETSY]}}
 								} else {
 								return{
-								type: 'line', borderColor: 'red', id: 'vline' + indexETSY, mode: 'vertical', scaleID: 'x-axis-0', value: dateETSYv, borderWidth: 1, label: {enabled: true, position: "top", content: pxETSY[indexETSY]}}
+								type: 'line', borderColor: 'red', id: 'vline' + indexETSY, mode: 'vertical', scaleID: 'x-axis-0', value: dateETSYv, borderWidth: 1, label: {enabled: true, position: "top", content: amountETSY[indexETSY]}}
 								};
 
 							});			
@@ -388,10 +392,10 @@
 		
 								if (B_STSLA[indexTSLA]=='Buy'){
 								return {
-								type: 'line', borderColor: 'green', id: 'vline' + indexTSLA, mode: 'vertical', scaleID: 'x-axis-0', value: dateTSLAv, borderWidth: 1, label: {enabled: true, position: "bottom", content: pxTSLA[indexTSLA]}}
+								type: 'line', borderColor: 'green', id: 'vline' + indexTSLA, mode: 'vertical', scaleID: 'x-axis-0', value: dateTSLAv, borderWidth: 1, label: {enabled: true, position: "bottom", content: amountTSLA[indexTSLA]}}
 								} else {
 								return{
-								type: 'line', borderColor: 'red', id: 'vline' + indexTSLA, mode: 'vertical', scaleID: 'x-axis-0', value: dateTSLAv, borderWidth: 1, label: {enabled: true, position: "top", content: pxTSLA[indexTSLA]}}
+								type: 'line', borderColor: 'red', id: 'vline' + indexTSLA, mode: 'vertical', scaleID: 'x-axis-0', value: dateTSLAv, borderWidth: 1, label: {enabled: true, position: "top", content: amountTSLA[indexTSLA]}}
 								};
 
 							});			
@@ -400,10 +404,10 @@
 		
 								if (B_SIVW[indexIVW]=='Buy'){
 								return {
-								type: 'line', borderColor: 'green', id: 'vline' + indexIVW, mode: 'vertical', scaleID: 'x-axis-0', value: dateIVWv, borderWidth: 1, label: {enabled: true, position: "bottom", content: pxIVW[indexIVW]}}
+								type: 'line', borderColor: 'green', id: 'vline' + indexIVW, mode: 'vertical', scaleID: 'x-axis-0', value: dateIVWv, borderWidth: 1, label: {enabled: true, position: "bottom", content: amountIVW[indexIVW]}}
 								} else {
 								return{
-								type: 'line', borderColor: 'red', id: 'vline' + indexIVW, mode: 'vertical', scaleID: 'x-axis-0', value: dateIVWv, borderWidth: 1, label: {enabled: true, position: "top", content: pxIVW[indexIVW]}}
+								type: 'line', borderColor: 'red', id: 'vline' + indexIVW, mode: 'vertical', scaleID: 'x-axis-0', value: dateIVWv, borderWidth: 1, label: {enabled: true, position: "top", content: amountIVW[indexIVW]}}
 								};
 
 							});		
