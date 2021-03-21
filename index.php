@@ -146,7 +146,7 @@
 	<div class="navbar-fixed">
 	<nav>
 		<div class="nav-wrapper">
-			<a href="#" class="brand-logo center">Trading Results: </a>
+			<a href="#" class="brand-logo center">Trading Results: 1</a>
 			<a href="" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>		
 		</div>
 	</nav>
@@ -270,7 +270,7 @@
 								    url:"insert.php",
 								    method:"POST",
 								    data:{tweet:testing_px},
-								    //dataType:"text",
+								    dataType:"text",
 								    success:function(data)
 								    {
 								     	txt = txt;
