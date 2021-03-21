@@ -146,7 +146,7 @@
 	<div class="navbar-fixed">
 	<nav>
 		<div class="nav-wrapper">
-			<a href="#" class="brand-logo center">Trading Results: </a>
+			<a href="#" class="brand-logo center">Trading Results: 1</a>
 			<a href="" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>		
 		</div>
 	</nav>
@@ -269,7 +269,8 @@
 								$.ajax({
 								    url:"insert1.php",
 								    method:"POST",
-								    data:{tweet5:testing_px},
+								    //data:{tweet5:testing_px},
+									data:{tweet5:"123"},
 								    dataType:"text",
 								    success:function(data)
 								    {
